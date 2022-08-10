@@ -5,11 +5,14 @@ import { map, switchMap, take } from "rxjs/operators";
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 
-import { AudioService } from "../audio.service";
-import { FileService } from "../file.service";
-import { MicrophoneService, OutputFormat } from "../microphone.service";
-import { RasService } from "../ras.service";
-import { SoundswallowerService } from "../soundswallower.service";
+import { AudioService } from "../../services/audio.service";
+import { FileService } from "../../services/file.service";
+import {
+  MicrophoneService,
+  OutputFormat,
+} from "../../services/microphone.service";
+import { RasService } from "../../services/ras.service";
+import { SoundswallowerService } from "../../services/soundswallower.service";
 
 @Component({
   selector: "app-upload",

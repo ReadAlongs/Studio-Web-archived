@@ -5,8 +5,8 @@ import {
 } from "@angular/common/http/testing";
 import { TestBed } from "@angular/core/testing";
 
-import { ASSEMBLE_MOCK, LANGS_MOCK } from "../mocks";
-import { RasService } from "./ras.service";
+import { ASSEMBLE_MOCK, LANGS_MOCK } from "../../mocks";
+import { RasService } from "../services/ras.service";
 
 describe("RasService", () => {
   let service: RasService;

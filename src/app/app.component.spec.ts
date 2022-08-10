@@ -11,9 +11,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterTestingModule } from "@angular/router/testing";
 
 import { AppComponent } from "./app.component";
-import { DemoComponent } from "./demo/demo.component";
+import { DemoComponent } from "./core/demo/demo.component";
+import { UploadComponent } from "./core/upload/upload.component";
 import { MaterialModule } from "./material.module";
-import { UploadComponent } from "./upload/upload.component";
 
 describe("AppComponent", () => {
   let httpClient: HttpClient;

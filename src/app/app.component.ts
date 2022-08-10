@@ -8,8 +8,9 @@ import { FormGroup } from "@angular/forms";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { MatStepper } from "@angular/material/stepper";
 
-import { B64Service } from "./b64.service";
-import { FileService } from "./file.service";
+import { UploadComponent } from "./core/upload/upload.component";
+import { B64Service } from "./services/b64.service";
+import { FileService } from "./services/file.service";
 import {
   audio_file_step,
   audio_record_step,
@@ -20,7 +21,6 @@ import {
   text_file_step,
   text_write_step,
 } from "./shepherd.steps";
-import { UploadComponent } from "./upload/upload.component";
 
 @Component({
   selector: "app-root",
