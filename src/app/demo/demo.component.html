@@ -14,6 +14,12 @@
               </button>
             </div>
         </div>
+
+        <div>
+            <img src="{{ 'data:image/jpg;base64,' + imgBase64 }}" alt="img1" />
+            <input type="file" (change)="picked($event)" type="file">
+        </div>
+
         <div class="row" *ngIf="b64Inputs">
             <read-along text="{{b64Inputs[1]}}" alignment="{{b64Inputs[2] }}" audio="{{b64Inputs[0]}}" class="hydrated">
                 <span #title (blur)="slots.title=title.innerText" contentEditable="true" slot="read-along-header">{{ slots.title }}</span>

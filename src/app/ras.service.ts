@@ -12,6 +12,7 @@ export class RasService {
   baseURL = environment.apiBaseURL;
   constructor(private http: HttpClient) {}
   assembleReadalong$(body: any): Observable<any> {
+    console.log("body body body:\n", body);
     return this.http.post(this.baseURL + "/assemble", body);
   }
   getLangs$(): Observable<any> {
