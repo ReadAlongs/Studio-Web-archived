@@ -47,6 +47,7 @@ describe("DemoComponent", () => {
     title1.nativeElement.value = "";
     title1.nativeElement.dispatchEvent(new Event("input"));
     expect(title1.nativeElement.value).toBeNull;
+
   });
 
   it("test edit title", () => {
@@ -75,6 +76,22 @@ describe("DemoComponent", () => {
 
     title1.nativeElement.dispatchEvent(new Event("input"));
     expect(title1.nativeElement.value).toBe("sub title 50");
+  });
+
+  it("test edit title", () => {
+    const { debugElement } = fixture;
+    const title1 = fixture.debugElement.query(By.css("#divid1"));
+    title1.nativeElement.value = "new title";
+    title1.nativeElement.dispatchEvent(new Event("input"));
+    expect(title1.nativeElement.value).toBe("new title");
+  });
+
+  it("test edit title", () => {
+    const { debugElement } = fixture;
+    const title1 = fixture.debugElement.query(By.css("#divid2"));
+    title1.nativeElement.value = "new sub title";
+    title1.nativeElement.dispatchEvent(new Event("input"));
+    expect(title1.nativeElement.value).toBe("new sub title");
   });
 
   it("test editable page title when it is simple value", () => {
