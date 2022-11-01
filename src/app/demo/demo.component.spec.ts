@@ -47,6 +47,7 @@ describe("DemoComponent", () => {
     title1.nativeElement.value = "";
     title1.nativeElement.dispatchEvent(new Event("input"));
     expect(title1.nativeElement.value).toBeNull;
+
   });
 
   it("test edit title", () => {
