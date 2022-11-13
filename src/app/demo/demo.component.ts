@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { B64Service } from "../b64.service";
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: "app-demo",
@@ -10,9 +12,87 @@ export class DemoComponent implements OnInit {
 
   slots: any = { title: "Title", subtitle: "Subtitle" };
 
-  constructor() {}
+  imageUrlForm = this.formBuilder.group({
+    pageIndex: 0,
+    url: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+  });
 
-  ngOnInit(): void {}
+  constructor(
+    private b64Service: B64Service,
+    private formBuilder: FormBuilder
+  ) {}
+
+  ngOnInit(): void {
+    this.initImageForEachPage();
+  }
+
+  updateImage(pageIndex: number, url: string) {
+    // @ts-ignore
+    const readalongRoot: any = document.querySelector("read-along").shadowRoot;
+    const images = readalongRoot.querySelectorAll(".image");
+    images[pageIndex].setAttribute("src", url);
+  }
+
+  updateImageInTextXML(pageIndex: number, url: string) {
+    console.log("base64[1]: ", this.b64Inputs[1]);
+    var textXML = this.b64Service.b64_to_utf8(
+      this.b64Inputs[1].substring(this.b64Inputs[1].indexOf(",") + 1)
+    );
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(textXML, "application/xml");
+    const pages = doc.querySelectorAll("div[type=page]");
+
+    // @ts-ignore
+    pages[pageIndex].querySelector("graphic").setAttribute("url", url);
+    console.log("page after:", pages[pageIndex]);
+
+    const serializer = new XMLSerializer();
+    const xmlStr = serializer.serializeToString(doc);
+
+    console.log("XML after: ", xmlStr);
+
+    this.b64Inputs[1] =
+      this.b64Inputs[1].slice(0, this.b64Inputs[1].indexOf(",") + 1) +
+      this.b64Service.utf8_to_b64(xmlStr);
+  }
+
+  onUploadImage(): void {
+    this.updateImage(
+      <number>this.imageUrlForm.value.pageIndex,
+      <string>this.imageUrlForm.value.url
+    );
+    this.updateImageInTextXML(
+      <number>this.imageUrlForm.value.pageIndex,
+      <string>this.imageUrlForm.value.url
+    );
+  }
+
+  initImageForEachPage(): void {
+    var textXML = this.b64Service.b64_to_utf8(
+      this.b64Inputs[1].substring(this.b64Inputs[1].indexOf(",") + 1)
+    );
+    console.log("textXML before:", textXML);
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(textXML, "application/xml");
+    const pages = doc.querySelectorAll("div[type=page]");
+    console.log("XML pages: ", pages);
+    pages.forEach((page) => {
+      page.insertAdjacentHTML(
+        "afterbegin",
+        '<graphic url="image-for-page1.jpg"/>'
+      );
+    });
+
+    const serializer = new XMLSerializer();
+    const xmlStr = serializer.serializeToString(doc);
+    console.log("textXML after:", xmlStr);
+
+    this.b64Inputs[1] =
+      this.b64Inputs[1].slice(0, this.b64Inputs[1].indexOf(",") + 1) +
+      this.b64Service.utf8_to_b64(xmlStr);
+  }
 
   imgBase64: any = null;
 
@@ -49,29 +129,48 @@ export class DemoComponent implements OnInit {
     this.imgBase64 = base64result;
   }
 
-  async getBase64(event: any) {
-    let me = this;
-    let file = event.target.files[0];
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-    let imgUrl = null;
-    // reader.onload = function () {
-    //   //me.modelvalue = reader.result;
-    //   console.log(reader.result);
-    //   imgUrl = reader.result;
-    // };
-
-    // this.imgBase64 = await reader.result;
-    reader.onerror = function (error) {
-      console.log("Error: ", error);
-    };
+  addUploadImageButtonForEachPage(): void {
+    // @ts-ignore
+    const readalongRoot: any = document.querySelector("read-along").shadowRoot;
+    const images = readalongRoot.querySelectorAll(".image");
+    console.log("images", images);
   }
 
   download() {
-    console.log(this.b64Inputs);
-    console.log(this.slots);
-    console.log("image b64: ");
-    console.log(this.imgBase64);
+    this.addUploadImageButtonForEachPage();
+
+    // @ts-ignore
+    const readalongRoot: any = document.querySelector("read-along").shadowRoot;
+    console.log("shadow root: ", readalongRoot);
+    const pages = readalongRoot.querySelectorAll(".page");
+    console.log("page:", pages);
+    const sentences = readalongRoot.querySelectorAll(".sentence");
+
+    pages.forEach((page: any) => {
+      const p = document.createElement("div");
+      p.innerHTML =
+        "    <script>\n" +
+        "      var loadFile = function (event) {\n" +
+        '        var image = document.getElementById("output");\n' +
+        "        image.src = URL.createObjectURL(event.target.files[0]);\n" +
+        "      };\n" +
+        "    </script>" +
+        "<p>\n" +
+        "      <input\n" +
+        '        type="file"\n' +
+        '        accept="image/*"\n' +
+        '        name="image"\n' +
+        '        id="file"\n' +
+        '        onchange="loadFile(event)"\n' +
+        "      />\n" +
+        "    </p>\n" +
+        '    <p><label for="file" style="cursor: pointer">Upload Image</label></p>\n' +
+        '    <p><img id="output" width="200" /></p>\n' +
+        "\n";
+
+      page.append(p);
+    });
+
     var element = document.createElement("a");
     let blob = new Blob(
       [
@@ -98,6 +197,7 @@ export class DemoComponent implements OnInit {
       { type: "text/html;charset=utf-8" }
     );
     element.href = window.URL.createObjectURL(blob);
+    console.log("element:", element);
     element.download = "readalong.html";
     document.body.appendChild(element);
     element.click();
