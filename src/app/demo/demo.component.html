@@ -22,6 +22,8 @@
         </div>
 
         <button (click)="addUploadImageButton()">Add Upload Event Listener</button>
+        <!--add new button about insert translation line -->
+        <button (click)="addTranslationLine()">Add Translation Line</button>
 
         <form [formGroup]="imageUrlForm" (ngSubmit)="onUploadImage()">
             <h2>Upload image to read-along component</h2>

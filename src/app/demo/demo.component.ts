@@ -32,6 +32,16 @@ export class DemoComponent implements OnInit {
     const readalongRoot: any = document.querySelector("read-along").shadowRoot;
     const images = readalongRoot.querySelectorAll(".image");
     images[pageIndex].setAttribute("src", url);
+
+    const sentences = readalongRoot.querySelectorAll(".sentence");
+    sentences.forEach((sentence: any) => {
+      const button = document.createElement("button");
+      button.innerHTML = "Button";
+      button.addEventListener("click", () => {
+        alert("sentence button");
+      });
+      sentence.insertAdjacentElement("afterend", button);
+    });
   }
 
   updateImageInTextXML(pageIndex: number, url: string) {
@@ -119,6 +129,57 @@ export class DemoComponent implements OnInit {
     }
   }
 
+  //addTranslationLine is called when the user clicks the "Add Translation" button
+  addTranslationLine(): void {
+    // @ts-ignore
+    const readalongRoot: any = document.querySelector("read-along").shadowRoot;
+    const sentences = readalongRoot.querySelectorAll(".sentence");
+    sentences.forEach((sentence: any) => {
+      const button = document.createElement("button");
+      button.innerHTML = "Button";
+      button.addEventListener("click", () => {
+        //alert("sentence button");
+        sentence.insertAdjacentHTML(
+          "beforeend",
+          '<br><span class = "translation" contenteditable = True>Translation</span>'
+        );
+      });
+      sentence.insertAdjacentElement("afterend", button);
+    });
+  }
+
+  //pass all sentences to b64Inputs[1]
+  updateTextXML(): void {
+    // @ts-ignore
+    const readalongRoot: any = document.querySelector("read-along").shadowRoot;
+    if (readalongRoot == null) {
+      return;
+    }
+    const translation = readalongRoot.querySelectorAll(".translation");
+    console.log("======== sentence: ============", translation[1]);
+    var textXML = this.b64Service.b64_to_utf8(
+      this.b64Inputs[1].substring(this.b64Inputs[1].indexOf(",") + 1)
+    );
+    console.log("======== textXML before: ============", textXML);
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(textXML, "application/xml");
+    const ss = doc.querySelectorAll("s");
+    console.log("======== ss: ============", ss[0]);
+    let count = 0;
+    let str = translation[count].innerHTML;
+    ss.forEach((x) => {
+      x.insertAdjacentHTML("beforeend", str);
+      count++;
+    });
+
+    const serializer = new XMLSerializer();
+    const xmlStr = serializer.serializeToString(doc);
+    console.log("======= textXML after: =============", xmlStr);
+    this.b64Inputs[1] =
+      this.b64Inputs[1].slice(0, this.b64Inputs[1].indexOf(",") + 1) +
+      this.b64Service.utf8_to_b64(xmlStr);
+  }
+
   imgBase64: any = null;
 
   public picked(event: any) {
@@ -155,6 +216,7 @@ export class DemoComponent implements OnInit {
   }
 
   download() {
+    this.updateTextXML();
     // @ts-ignore
     const readalongRoot: any = document.querySelector("read-along").shadowRoot;
     console.log("shadow root: ", readalongRoot);
