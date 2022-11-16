@@ -11,6 +11,7 @@ export class DemoComponent implements OnInit {
   @Input() b64Inputs: string[];
 
   slots: any = { title: "Title", subtitle: "Subtitle" };
+  defaultImage = "image-for-page1.jpg";
 
   imageUrlForm = this.formBuilder.group({
     pageIndex: 0,
@@ -94,6 +95,30 @@ export class DemoComponent implements OnInit {
       this.b64Service.utf8_to_b64(xmlStr);
   }
 
+  addUploadImageButton(): void {
+    // @ts-ignore
+    const readalongRoot: any = document.querySelector("read-along").shadowRoot;
+    const images = readalongRoot.querySelectorAll(".image");
+    for (let imageIndex = 0; imageIndex < images.length; imageIndex++) {
+      images[imageIndex].addEventListener("click", () => {
+        const currURL = images[imageIndex].getAttribute("src");
+        let imgURL = prompt(
+          "Please enter image url",
+          currURL && currURL.includes(this.defaultImage) ? "" : currURL
+        );
+
+        // set image to default if user enter an empty url.
+        if (imgURL == "") {
+          imgURL = "assets/" + this.defaultImage;
+        }
+        if (imgURL != null) {
+          this.updateImage(imageIndex, imgURL);
+          this.updateImageInTextXML(imageIndex, imgURL);
+        }
+      });
+    }
+  }
+
   imgBase64: any = null;
 
   public picked(event: any) {
@@ -129,16 +154,7 @@ export class DemoComponent implements OnInit {
     this.imgBase64 = base64result;
   }
 
-  addUploadImageButtonForEachPage(): void {
-    // @ts-ignore
-    const readalongRoot: any = document.querySelector("read-along").shadowRoot;
-    const images = readalongRoot.querySelectorAll(".image");
-    console.log("images", images);
-  }
-
   download() {
-    this.addUploadImageButtonForEachPage();
-
     // @ts-ignore
     const readalongRoot: any = document.querySelector("read-along").shadowRoot;
     console.log("shadow root: ", readalongRoot);
@@ -196,6 +212,7 @@ export class DemoComponent implements OnInit {
       ],
       { type: "text/html;charset=utf-8" }
     );
+
     element.href = window.URL.createObjectURL(blob);
     console.log("element:", element);
     element.download = "readalong.html";
