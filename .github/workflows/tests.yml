@@ -18,6 +18,10 @@ jobs:
       - name: Install
         run: |
           npm install
+      - name: Instrospection of node version impact
+        run: |
+          cat package-lock.json
+          find node_modules | xargs md5sum
       - name: Test
         run: |
           npm run test:once
