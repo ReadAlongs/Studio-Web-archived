@@ -30,6 +30,8 @@
         "@angular/platform-browser": "^14.2.0",
         "@angular/platform-browser-dynamic": "^14.2.0",
         "@angular/router": "^14.2.0",
+        "@ngx-translate/core": "^14.0.0",
+        "@ngx-translate/http-loader": "^7.0.0",
         "angular-shepherd": "^14.0.0",
         "bootstrap": "^5.2.3",
         "ngx-toastr": "^15.0.0",
