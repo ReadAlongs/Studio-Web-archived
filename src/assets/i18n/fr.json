@@ -1,0 +1,74 @@
+{
+	"upload": {
+		"audio": {
+			"title": "Audio",
+			"subtitle": "Choisir un fichier audio",
+			"success": " lu, mais pas téléversé. Votre audio restera sur votre ordinateur.",
+			"record-toggle": "Enregistrer",
+			"file-toggle": "Fichier",
+			"instructions": "Votre fichier audio doit être en format mp3, wav ou webm.",
+			"box-title": "Enregistrez votre voix ici",
+			"button": {
+				"rerecord": "Réenregistrer",
+				"record": "Enregistrer",
+				"stop": "Arrêt",
+				"play": "Lecture",
+				"download": "Télécharger",
+				"delete": "Effacer"
+			}
+		},
+		"errors": {
+			"form-incomplete": "Prière de préparer votre texte et votre audio et de choisir une langue.",
+			"form-incomplete-title": "Formulaire incomplet",
+			"no-audio": "Prière de (ré-)enregistrer votre voix ou de choisir un fichier audio.",
+			"no-audio-download": "Pas d'audio à télécharger.",
+			"no-audio-title": "Pas d'audio",
+			"no-lang": "Prière de choisir une langue.",
+			"no-lang-title": "Pas de langue",
+			"no-text": "Prière de saisir le texte à aligner.",
+			"no-text-download": "Pas de texte à télécharger.",
+			"no-text-file": "Prière de choisir un fichier texte.",
+			"no-text-file-title": "Pas de texte",
+			"no-text-title": "Pas de texte",
+			"recording-error": "Prière de choisir un fichier texte.",
+			"sorry": "Désolé!"
+		},
+		"file": "Fichier ",
+		"great": "Bravo!",
+		"header": {
+			"title": "Sélectionner des données pour commencer votre ReadAlong",
+			"description": "Pour créer un ReadAlong, nous avons besoin de trois informations. D'abord, <b>en quelle langue</b> sera votre ReadAlong, ensuite <b>un texte</b> puis finalement <b>un enregistrement audio</b>."
+		},
+		"record": {
+			"success": "Audio enregistré avec succès",
+			"success-title": "Hourra!",
+			"try-again": "Prière de réessayer ou de choisir un fichier pré-enregistré.",
+			"try-again-title": "Erreur d'enregistrement"
+		},
+		"text-box": {
+			"success": " lu. Il sera téléversé à l'aide d'une connexion chiffrée quand vous passerez à la prochaine étape.",
+			"title": "Texte",
+			"write-toggle": "Rédiger",
+			"file-toggle": "Fichier",
+			"file-instructions": "Sélectionnez un fichier de texte brut (.txt) ou un fichier ReadAlong Studio (.ras)",
+			"write-instructions": "Rédigez ou collez votre texte ici",
+			"help-button": "Format",
+			"save-button": "Télécharger",
+			"write-placeholder": "Ex. Bonjour, je m'appelle..."
+		},
+		"lang": {
+			"title": "Selectionner votre langue",
+			"instructions": {
+				"part1": "Si votre lange ne figure pas dans la liste ci-dessous, vous pouvez vous essayer avec l'option « Indeterminée ». Si cela ne fonctionne pas très bien, jetez un coup d'œil sur",
+				"blog-link": "cette série de billets de blogue (en anglais)",
+				"part2": "pour comprendre comment ajouter votre langue à la liste, ou",
+				"contact-us": "contactez-nous",
+				"part3": "pour plus d'informations!"
+			},
+			"select-label": "Vous pouvez utiliser le menu ci-dessous pour sélectionner une correspondance orthographique-phonétique préconstruite pour votre langue.",
+			"dropdown-label": "Selectionner une langue",
+			"name-of-undetermined": "Indeterminée - (und)"
+		},
+		"next-button": "Prochaine étape!"
+	}
+}

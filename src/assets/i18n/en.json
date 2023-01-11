@@ -1,0 +1,74 @@
+{
+	"upload": {
+		"audio": {
+			"title": "Audio",
+			"subtitle": "Select an audio file",
+			"success": " processed, but not uploaded. Your audio will stay on your computer.",
+			"record-toggle": "Record",
+			"file-toggle": "File",
+			"instructions": "Use pre-recorded audio from an mp3, wav, or webm file.",
+			"box-title": "Record your voice here",
+			"button": {
+				"rerecord": "Re-Record",
+				"record": "Record",
+				"stop": "Stop",
+				"play": "Play",
+				"download": "Download",
+				"delete": "Delete"
+			}
+		},
+		"errors": {
+			"form-incomplete": "Please select or write text, select or record audio data, and select the language.",
+			"form-incomplete-title": "Form not complete",
+			"no-audio": "Please (re-)record some audio or select an audio file.",
+			"no-audio-download": "No audio to download.",
+			"no-audio-title": "No audio",
+			"no-lang": "Please select a language.",
+			"no-lang-title": "No language",
+			"no-text": "Please enter text to align.",
+			"no-text-download": "No text to download.",
+			"no-text-file": "Please select a text file.",
+			"no-text-file-title": "No text",
+			"no-text-title": "No text",
+			"recording-error": "Whoops, something went wrong while recording!",
+			"sorry": "Sorry!"
+		},
+		"file": "File ",
+		"great": "Great!",
+		"header": {
+			"title": "Select data to start creating your ReadAlong",
+			"description": "In order to make a ReadAlong, we need 3 different things. We need to know <b>which language</b> your readalong is in, and we also need some <b>text</b>, and corresponding <b>audio</b>."
+		},
+		"record": {
+			"success": "Audio was successfully recorded",
+			"success-title": "Yay!",
+			"try-again": "Please try again, or select a pre-recorded file.",
+			"try-again-title": "Audio not recorded!"
+		},
+		"text-box": {
+			"success": " processed. It will be uploaded through an encrypted connection when you go to the next step.",
+			"title": "Text",
+			"write-toggle": "Write",
+			"file-toggle": "File",
+			"file-instructions": "Select a plain text file (.txt) or a ReadAlong Studio temporary file (.ras)",
+			"write-instructions": "Write or paste your text here",
+			"help-button": "Format",
+			"save-button": "Save",
+			"write-placeholder": "Ex. Hello my name is..."
+		},
+		"lang": {
+			"title": "Select your Language",
+			"instructions": {
+				"part1": "If your language isn't supported in the list below, you can try and run it with the \"Undetermined\" option below. If that's not working very well, have a look at",
+				"blog-link": "this blog post series",
+				"part2": "to understand how you might get support for your language, or",
+				"contact-us": "contact us",
+				"part3": "for more info!"
+			},
+			"select-label": "You can use the dropdown below to select a pre-configured mapping for your language.",
+			"dropdown-label": "Select Language",
+			"name-of-undetermined": "Undetermined - (und)"
+		},
+		"next-button": "Go to the next step!"
+	}
+}

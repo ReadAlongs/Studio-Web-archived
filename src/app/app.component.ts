@@ -41,7 +41,7 @@ export class AppComponent {
     private b64Service: B64Service,
     private fileService: FileService,
     private toastr: ToastrService,
-    private translate: TranslateService,
+    public translate: TranslateService,
     public dialog: MatDialog,
     public shepherdService: ShepherdService
   ) {
@@ -130,6 +130,10 @@ export class AppComponent {
       ]).subscribe((x: any) => this.b64Inputs$.next(x));
       this.stepper.next();
     }
+  }
+
+  useLanguage(language: string): void {
+    this.translate.use(language);
   }
 }
 
