@@ -50,5 +50,5 @@ import "zone.js"; // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
-// ng add @angular/localize doesn't work for some stupid reason, so we have to add this
+
 import "@angular/localize/init";

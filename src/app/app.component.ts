@@ -1,13 +1,13 @@
 import { ShepherdService } from "angular-shepherd";
 import { ToastrService } from "ngx-toastr";
 import { forkJoin, of, Subject } from "rxjs";
-import { map } from "rxjs/operators";
 import { Segment } from "soundswallower";
 
 import { Component, ViewChild } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { MatStepper } from "@angular/material/stepper";
+import { TranslateService } from "@ngx-translate/core";
 
 import { B64Service } from "./b64.service";
 import { FileService } from "./file.service";
@@ -41,9 +41,14 @@ export class AppComponent {
     private b64Service: B64Service,
     private fileService: FileService,
     private toastr: ToastrService,
+    private translate: TranslateService,
     public dialog: MatDialog,
     public shepherdService: ShepherdService
-  ) {}
+  ) {
+    translate.setDefaultLang("en");
+    translate.use("en");
+  }
+
   ngOnInit(): void {
     this.b64Inputs$.subscribe((x) => console.log(x));
     this.toastr.warning(
