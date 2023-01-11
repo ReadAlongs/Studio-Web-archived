@@ -5,16 +5,12 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start-fr": "ng serve --configuration=fr --port=5200",
-        "build": "ng build --configuration development --localize",
-        "build:prod": "ng build --configuration production --localize",
-        "build:prod:ghpages": "ng build --configuration production && ng build --configuration production,fr",
-        "watch": "ng build --watch --configuration development --localize",
+        "build": "ng build --configuration development",
+        "build:prod": "ng build --configuration production",
+        "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "test:once": "ng test --watch=false --browsers ChromeHeadlessCI",
-        "prepare": "husky install",
-        "extract-i18n": "ng extract-i18n --format json --output-path src/i18n",
-        "check-fr-l10n": "bash -c \"diff -w <(cat src/i18n/messages.json | sed 's/:.*//') <(cat src/i18n/messages.fr.json | sed 's/:.*//')\""
+        "prepare": "husky install"
     },
     "private": true,
     "commitlint": {
@@ -47,7 +43,6 @@
         "@angular-devkit/build-angular": "^14.2.0",
         "@angular/cli": "^14.2.0",
         "@angular/compiler-cli": "^14.2.0",
-        "@angular/localize": "^14.2.12",
         "@commitlint/cli": "^17.0.3",
         "@commitlint/config-conventional": "^17.0.3",
         "@types/dom-mediacapture-record": "^1.0.14",

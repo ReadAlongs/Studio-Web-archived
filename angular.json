@@ -13,12 +13,6 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "i18n": {
-        "sourceLocale": "en",
-        "locales": {
-          "fr": "src/i18n/messages.fr.json"
-        }
-      },
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -83,10 +77,6 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            },
-            "fr": {
-              "localize": ["fr"],
-              "deleteOutputPath": false
             }
           },
           "defaultConfiguration": "production"
@@ -99,9 +89,6 @@
             },
             "development": {
               "browserTarget": "readalong-studio:build:development"
-            },
-            "fr": {
-              "browserTarget": "readalong-studio:build:development,fr"
             }
           },
           "defaultConfiguration": "development"
