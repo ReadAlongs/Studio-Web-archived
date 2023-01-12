@@ -101,5 +101,9 @@
 		"example-label": "Par exemple:",
 		"pre-formatted-example": "Phrase un dans le paragraphe un à la page un.\nPhrase deux dans le paragraphe un à la page un.\n\nPhrase un dans le paragraphe deux à la page un.\nPhrase deux dans le paragraphe deux à la page un.\n\n\nPhrase un dans le paragraphe un à la page deux.",
 		"close-button": "Fermer"
+	},
+	"demo": {
+		"congrats": "Félicitations! Voici votre ReadAlong!",
+		"aria-download-button": "Sauvegarder votre ReadAlong"
 	}
 }

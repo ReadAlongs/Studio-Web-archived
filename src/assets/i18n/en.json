@@ -101,5 +101,9 @@
 		"example-label": "Example:",
 		"pre-formatted-example": "This is sentence one in paragraph one on page one.\nThis is sentence two in paragraph one on page one.\n\nThis is sentence one in paragraph two on page one.\nThis is sentence two in paragraph two on page one.\n\n\nThis is sentence one in paragraph one on page two.",
 		"close-button": "Close"
+	},
+	"demo": {
+		"congrats": "Congratulations! Here's your ReadAlong!",
+		"aria-download-button": "Save your ReadAlong"
 	}
 }
