@@ -14,7 +14,9 @@
 		},
 		"tour-button": "Visite guidée",
 		"step1": "Étape 1",
-		"step2": "Étape 2"
+		"step2": "Étape 2",
+		"not-released": "Cette appli n'a pas été publiée officiellement. Prière de ne pas vous attendre à ce qu'elle fonctionne déjà correctement.",
+		"not-released-title": "Avertissement"
 	},
 	"upload": {
 		"audio": {
@@ -104,6 +106,8 @@
 	},
 	"demo": {
 		"congrats": "Félicitations! Voici votre ReadAlong!",
-		"aria-download-button": "Sauvegarder votre ReadAlong"
+		"download-button-alt": "Sauvegarder votre ReadAlong",
+		"title-slot": "Titre",
+		"subtitle-slot": "Sous-titre"
 	}
 }

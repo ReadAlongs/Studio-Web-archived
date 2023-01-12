@@ -1,6 +1,6 @@
 import { ShepherdService } from "angular-shepherd";
 import { ToastrService } from "ngx-toastr";
-import { forkJoin, of, Subject } from "rxjs";
+import { forkJoin, Observable, of, Subject } from "rxjs";
 import { Segment } from "soundswallower";
 
 import { Component, ViewChild } from "@angular/core";
@@ -51,11 +51,19 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.b64Inputs$.subscribe((x) => console.log(x));
-    this.toastr.warning(
-      $localize`This app has not been officially released and should not be expected to work properly yet.`,
-      $localize`Warning`,
-      { timeOut: 10000 }
-    );
+    // This solution one doesn't work, the translations are not loaded yet when the warning gets displayed.
+    //this.toastr.warning(
+    //  this.translate.instant("app.not-released"),
+    //  this.translate.instant("app.not-released-title"),
+    //  { timeOut: 10000 }
+    //);
+    // This solution works, but you only get the English message at load time, switching language does not display the French message.
+    forkJoin({
+      title: this.translate.get("app.not-released-title"),
+      text: this.translate.get("app.not-released"),
+    }).subscribe((v) => {
+      this.toastr.warning(v.text, v.title);
+    });
   }
 
   ngAfterViewInit() {
@@ -134,6 +142,15 @@ export class AppComponent {
 
   useLanguage(language: string): void {
     this.translate.use(language);
+    // I don't like this - it means we re-display the warning each time we change the language. But otherwise, I only display it in English and never in French. Maybe that's OK?
+    // Maybe if we can save the user's language choice on their PC, the interface would be in their language up front afterwards and we wouldn't need to repeat this?
+    // Maybe we can have a counter and set a maximum number of times we'll display this message? Or remember which languages we displayed it in? Meh...
+    forkJoin({
+      title: this.translate.get("app.not-released-title"),
+      text: this.translate.get("app.not-released"),
+    }).subscribe((v) => {
+      this.toastr.warning(v.text, v.title);
+    });
   }
 }
 

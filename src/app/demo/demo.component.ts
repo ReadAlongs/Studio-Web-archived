@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
+import { forkJoin } from "rxjs";
 
 @Component({
   selector: "app-demo",
@@ -8,10 +10,21 @@ import { Component, Input, OnInit } from "@angular/core";
 export class DemoComponent implements OnInit {
   @Input() b64Inputs: string[];
 
-  slots: any = { title: $localize`Title`, subtitle: $localize`Subtitle` };
-  constructor() {}
+  //slots: any = { title: $localize`Title`, subtitle: $localize`Subtitle` };
+  slots: any; // = {
+  //  title: this.translate.get("demo.title-slot"),
+  //  subtitle: this.translate.get("demo.subtitle-slot"),
+  //}
+  constructor(public translate: TranslateService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // This does not quite work - if the user changes the language, the displayed slot values are not updated.
+    // It works fine if the user changes the language in step 1, but not if they change the language again in step 2
+    forkJoin({
+      title: this.translate.get("demo.title-slot"),
+      subtitle: this.translate.get("demo.subtitle-slot"),
+    }).subscribe((v) => (this.slots = v));
+  }
 
   download() {
     console.log(this.slots);
