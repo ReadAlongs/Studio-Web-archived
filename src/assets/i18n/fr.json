@@ -1,4 +1,21 @@
 {
+	"app": {
+		"welcome": "Bienvenue au Studio ReadAlong",
+		"description": {
+			"part1": "Cet outil vous aidera à créer une page interactive de lecture accompagnée, sur laquelle les mots sont surlignés lorsqu'ils sont lus à voix haute. Jetez un coup d'œil à",
+			"east-cree-link": "cet exemple en cri de l'Est",
+			"part2": "pour mieux comprendre le concept."
+		},
+		"getting-started-bad": "Avant de commencer à en faire vous-même, veuillez lire notre <a style='color: #07c; cursor: pointer;' (click)='openPrivacyDialog()'>politique de vie privée et de souveraineté des données</a>, faites une visite guidée en cliquant sur le bouton « Visite guidée » puis suivez les étapes ci-dessous.",
+		"getting-started": {
+			"part1": "Avant de commencer à en faire vous-même, veuillez lire notre",
+			"privacy-policy-link": "politique de vie privée et de souveraineté des données",
+			"part2": ", faites une visite guidée en cliquant sur le bouton « Visite guidée » puis suivez les étapes ci-dessous."
+		},
+		"tour-button": "Visite guidée",
+		"step1": "Étape 1",
+		"step2": "Étape 2"
+	},
 	"upload": {
 		"audio": {
 			"title": "Audio",

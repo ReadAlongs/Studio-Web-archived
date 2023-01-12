@@ -1,4 +1,21 @@
 {
+	"app": {
+		"welcome": "Welcome to ReadAlong Studio",
+		"description": {
+			"part1": "This is a tool to help you make your own interactive 'readalong' that highlights words as they are spoken. Have a look at",
+			"east-cree-link": "this example in East Cree",
+			"part2": "to get a better idea of what these are."
+		},
+		"getting-started-bad": "To get started making your own, read our <a style='color: #07c; cursor: pointer;' (click)='openPrivacyDialog()'>privacy and data sovereignty policy</a>, then take a tour by clicking on the tour button below, and follow the steps below.",
+		"getting-started": {
+			"part1": "To get started making your own, read our",
+			"privacy-policy-link": "privacy and data sovereignty policy",
+			"part2": ", then take a tour by clicking on the tour button below, and follow the steps below."
+		},
+		"tour-button": "Take the tour!",
+		"step1": "Step 1",
+		"step2": "Step 2"
+	},
 	"upload": {
 		"audio": {
 			"title": "Audio",
