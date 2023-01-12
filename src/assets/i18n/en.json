@@ -87,5 +87,10 @@
 			"name-of-undetermined": "Undetermined - (und)"
 		},
 		"next-button": "Go to the next step!"
+	},
+	"privacy-policy": {
+		"title": "Privacy Policy",
+		"text": "We have built this tool with the top goal of respecting your privacy and data sovereignty. The audio that you use on this site <b>does not get uploaded anywhere</b>. It will stay on your computer. The text you use for this Read Along will be uploaded over an encrypted connection to a server for preprocessing. The text is not saved and is not used for any other purpose. Using this site means that you agree for your data to be used in this way.",
+		"agree-button": "I agree"
 	}
 }

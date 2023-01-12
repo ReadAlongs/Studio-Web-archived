@@ -87,5 +87,10 @@
 			"name-of-undetermined": "Indeterminée - (und)"
 		},
 		"next-button": "Prochaine étape!"
+	},
+	"privacy-policy": {
+		"title": "Politique de vie privée",
+		"text": "Cet outil a été conçu avec le but principal de respecter votre vie privée et la souveraineté de vos données. L'audio que vous rentrez sur ce site <b>ne sera jamais téléversé</b> mais restera sur votre ordinateur. Le texte que vous utilisez pour ce ReadAlong sera transféré à un serveur par une connection chiffrée pour accomplir le traitement nécessaire, mais ne sera ni sauvegardé ni utilisé à d'autres fins. Votre utilisation de ce site indique votre accord avec cette utilisation de vos données.",
+		"agree-button": "D'accord"
 	}
 }
