@@ -71,7 +71,6 @@ export class UploadComponent implements OnInit {
     this.microphoneService.recorderError.subscribe((recorderErrorCase) => {
       this.toastr.error(
         recorderErrorCase.toString(),
-        //$localize`Whoops, something went wrong while recording!`
         this.translate.instant("upload.errors.recording-error")
       );
     });
@@ -97,7 +96,6 @@ export class UploadComponent implements OnInit {
       a.click();
       a.remove();
     } else {
-      //this.toastr.error($localize`No audio to download.`, $localize`Sorry!`);
       this.toastr.error(
         this.translate.instant("upload.errors.no-audio-download"),
         this.translate.instant("upload.errors.sorry")
@@ -117,7 +115,6 @@ export class UploadComponent implements OnInit {
       a.click();
       a.remove();
     } else {
-      //this.toastr.error($localize`No text to download.`, $localize`Sorry!`);
       this.toastr.error(
         this.translate.instant("upload.errors.no-text-download"),
         this.translate.instant("upload.errors.sorry")
@@ -171,9 +168,7 @@ export class UploadComponent implements OnInit {
       .stopRecording()
       .then((output) => {
         this.toastr.success(
-          //$localize`Audio was successfully recorded`,
           this.translate.instant("upload.record.success"),
-          //$localize`Yay!`
           this.translate.instant("upload.record.success-title")
         );
         this.audioControl.setValue(output as Blob);
@@ -181,9 +176,7 @@ export class UploadComponent implements OnInit {
       })
       .catch((errorCase) => {
         this.toastr.error(
-          //$localize`Please try again, or select a pre-recorded file.`,
           this.translate.instant("upload.record.try-again"),
-          //$localize`Audio not recorded!`
           this.translate.instant("upload.record.try-again-title")
         );
         console.log(errorCase);
@@ -208,9 +201,7 @@ export class UploadComponent implements OnInit {
         this.textControl.setValue(inputText);
       } else {
         this.toastr.error(
-          //$localize`Please enter text to align.`,
           this.translate.instant("upload.errors.no-text"),
-          //$localize`No text`,
           this.translate.instant("upload.errors.no-text-title"),
           { timeOut: 15000 }
         );
@@ -218,9 +209,7 @@ export class UploadComponent implements OnInit {
     } else {
       if (this.textControl.value === null) {
         this.toastr.error(
-          //$localize`Please select a text file.`,
           this.translate.instant("upload.errors.no-text-file"),
-          //$localize`No text`,
           this.translate.instant("upload.errors.no-text-file-title"),
           { timeOut: 15000 }
         );
@@ -280,26 +269,20 @@ export class UploadComponent implements OnInit {
     } else {
       if (this.langControl.value === null) {
         this.toastr.error(
-          //$localize`Please select a language.`,
           this.translate.instant("upload.errors.no-lang"),
-          //$localize`No language`,
           this.translate.instant("upload.errors.no-lang-title"),
           { timeOut: 15000 }
         );
       }
       if (this.audioControl.value === null) {
         this.toastr.error(
-          //$localize`Please (re-)record some audio or select an audio file.`,
           this.translate.instant("upload.errors.no-audio"),
-          //$localize`No audio`,
           this.translate.instant("upload.errors.no-audio-title"),
           { timeOut: 15000 }
         );
       }
       this.toastr.error(
-        //$localize`Please select or write text, select or record audio data, and select the language.`,
         this.translate.instant("upload.errors.form-incomplete"),
-        //$localize`Form not complete`,
         this.translate.instant("upload.errors.form-incomplete-title"),
         { timeOut: 15000 }
       );
@@ -317,26 +300,18 @@ export class UploadComponent implements OnInit {
         this.audioControl.setValue(file);
       }
       this.toastr.success(
-        //$localize`File ` +
-        //  file.name +
-        //  $localize` processed, but not uploaded. Your audio will stay on your computer.`,
         this.translate.instant("upload.file") +
           file.name +
           this.translate.instant("upload.audio.success"),
-        //$localize`Great!`,
         this.translate.instant("upload.great"),
         { timeOut: 10000 }
       );
     } else if (type === "text") {
       this.textControl.setValue(file);
       this.toastr.success(
-        //$localize`File ` +
-        //  file.name +
-        //  $localize` processed. It will be uploaded through an encrypted connection when you go to the next step.`,
         this.translate.instant("upload.file") +
           file.name +
           this.translate.instant("upload.text-box.success"),
-        //$localize`Great!`,
         this.translate.instant("upload.great"),
         { timeOut: 10000 }
       );
