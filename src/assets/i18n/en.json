@@ -92,5 +92,14 @@
 		"title": "Privacy Policy",
 		"text": "We have built this tool with the top goal of respecting your privacy and data sovereignty. The audio that you use on this site <b>does not get uploaded anywhere</b>. It will stay on your computer. The text you use for this Read Along will be uploaded over an encrypted connection to a server for preprocessing. The text is not saved and is not used for any other purpose. Using this site means that you agree for your data to be used in this way.",
 		"agree-button": "I agree"
+	},
+	"format-help": {
+		"header": "Here is how to format your plain text input text.",
+		"part1-one-sent-per-line": "Each line should ideally contain one sentence, although that is not a strict rule.",
+		"part2-paragraph-breaks": "Paragraph breaks are indicated by inserting a blank line.",
+		"part3-page-breaks": "Page breaks are indicated by inserting two consecutive blank lines.",
+		"example-label": "Example:",
+		"pre-formatted-example": "This is sentence one in paragraph one on page one.\nThis is sentence two in paragraph one on page one.\n\nThis is sentence one in paragraph two on page one.\nThis is sentence two in paragraph two on page one.\n\n\nThis is sentence one in paragraph one on page two.",
+		"close-button": "Close"
 	}
 }

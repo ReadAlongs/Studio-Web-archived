@@ -92,5 +92,14 @@
 		"title": "Politique de vie privée",
 		"text": "Cet outil a été conçu avec le but principal de respecter votre vie privée et la souveraineté de vos données. L'audio que vous rentrez sur ce site <b>ne sera jamais téléversé</b> mais restera sur votre ordinateur. Le texte que vous utilisez pour ce ReadAlong sera transféré à un serveur par une connection chiffrée pour accomplir le traitement nécessaire, mais ne sera ni sauvegardé ni utilisé à d'autres fins. Votre utilisation de ce site indique votre accord avec cette utilisation de vos données.",
 		"agree-button": "D'accord"
+	},
+	"format-help": {
+		"header": "Voici comment formatter le texte brut pour votre ReadAlong.",
+		"part1-one-sent-per-line": "Idéalement chaque ligne ne devrait contenir qu'une seule phrase, mais ceci n'est pas strictement exigé.",
+		"part2-paragraph-breaks": "Pour séparer des paragraphes, insérez une ligne vide.",
+		"part3-page-breaks": "Pour séparer les pages, insérez une séquence de deux lignes vides.",
+		"example-label": "Par exemple:",
+		"pre-formatted-example": "Phrase un dans le paragraphe un à la page un.\nPhrase deux dans le paragraphe un à la page un.\n\nPhrase un dans le paragraphe deux à la page un.\nPhrase deux dans le paragraphe deux à la page un.\n\n\nPhrase un dans le paragraphe un à la page deux.",
+		"close-button": "Fermer"
 	}
 }
