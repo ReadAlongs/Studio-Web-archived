@@ -51,4 +51,5 @@ import "zone.js"; // Included with Angular CLI.
  * APPLICATION IMPORTS
  */
 
+// TODO delete this import when localization is all refactored to ngx-translate
 import "@angular/localize/init";

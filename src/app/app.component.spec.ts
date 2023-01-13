@@ -15,6 +15,8 @@ import { DemoComponent } from "./demo/demo.component";
 import { MaterialModule } from "./material.module";
 import { UploadComponent } from "./upload/upload.component";
 
+// TODO figure out how to inject translate: TranslateService into all the test suites that need it.
+
 describe("AppComponent", () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;

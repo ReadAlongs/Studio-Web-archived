@@ -10,16 +10,13 @@ import { forkJoin } from "rxjs";
 export class DemoComponent implements OnInit {
   @Input() b64Inputs: string[];
 
-  //slots: any = { title: $localize`Title`, subtitle: $localize`Subtitle` };
-  slots: any; // = {
-  //  title: this.translate.get("demo.title-slot"),
-  //  subtitle: this.translate.get("demo.subtitle-slot"),
-  //}
+  slots: any;
   constructor(public translate: TranslateService) {}
 
   ngOnInit(): void {
     // This does not quite work - if the user changes the language, the displayed slot values are not updated.
     // It works fine if the user changes the language in step 1, but not if they change the language again in step 2
+    // It seems like my observable subscription fires just once, rather than at each update as I thought it was supposed to.
     forkJoin({
       title: this.translate.get("demo.title-slot"),
       subtitle: this.translate.get("demo.subtitle-slot"),

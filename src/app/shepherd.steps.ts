@@ -1,3 +1,5 @@
+// TODO figure out how to inject translation: TranslateService into this TS file...
+
 export const intro_step: any = {
   title: $localize`Welcome to ReadAlong Studio\n`,
   text: $localize`Creating a ReadAlong is easy!\
