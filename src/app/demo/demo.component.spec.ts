@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { TranslateModule } from "@ngx-translate/core";
 
 import { MaterialModule } from "../material.module";
 import { DemoComponent } from "./demo.component";
@@ -10,7 +11,7 @@ describe("DemoComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MaterialModule],
+      imports: [MaterialModule, TranslateModule.forRoot()],
       declarations: [DemoComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
