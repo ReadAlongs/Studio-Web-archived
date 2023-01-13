@@ -1,40 +1,58 @@
 {
 	"app": {
-		"welcome": "Welcome to ReadAlong Studio",
 		"description": {
-			"part1": "This is a tool to help you make your own interactive 'readalong' that highlights words as they are spoken. Have a look at",
 			"east-cree-link": "this example in East Cree",
+			"part1": "This is a tool to help you make your own interactive 'readalong' that highlights words as they are spoken. Have a look at",
 			"part2": "to get a better idea of what these are."
 		},
-		"getting-started-bad": "To get started making your own, read our <a style='color: #07c; cursor: pointer;' (click)='openPrivacyDialog()'>privacy and data sovereignty policy</a>, then take a tour by clicking on the tour button below, and follow the steps below.",
 		"getting-started": {
 			"part1": "To get started making your own, read our",
-			"privacy-policy-link": "privacy and data sovereignty policy",
-			"part2": ", then take a tour by clicking on the tour button below, and follow the steps below."
+			"part2": ", then take a tour by clicking on the tour button below, and follow the steps below.",
+			"privacy-policy-link": "privacy and data sovereignty policy"
 		},
-		"tour-button": "Take the tour!",
+		"not-released": "This app has not been officially released and should not be expected to work properly yet.",
+		"not-released-title": "Warning",
 		"step1": "Step 1",
 		"step2": "Step 2",
-		"not-released": "This app has not been officially released and should not be expected to work properly yet.",
-		"not-released-title": "Warning"
+		"tour-button": "Take the tour!",
+		"welcome": "Welcome to ReadAlong Studio"
+	},
+	"demo": {
+		"congrats": "Congratulations! Here's your ReadAlong!",
+		"subtitle-slot": "Subtitle",
+		"title-slot": "Title"
+	},
+	"format-help": {
+		"close-button": "Close",
+		"example-label": "Example:",
+		"header": "Here is how to format your plain text input text.",
+		"part1-one-sent-per-line": "Each line should ideally contain one sentence, although that is not a strict rule.",
+		"part2-paragraph-breaks": "Paragraph breaks are indicated by inserting a blank line.",
+		"part3-page-breaks": "Page breaks are indicated by inserting two consecutive blank lines.",
+		"pre-formatted-example": "This is sentence one in paragraph one on page one.\nThis is sentence two in paragraph one on page one.\n\nThis is sentence one in paragraph two on page one.\nThis is sentence two in paragraph two on page one.\n\n\nThis is sentence one in paragraph one on page two."
+	},
+	"privacy-policy": {
+		"agree-button": "I agree",
+		"text": "We have built this tool with the top goal of respecting your privacy and data sovereignty. The audio that you use on this site <b>does not get uploaded anywhere</b>. It will stay on your computer. The text you use for this Read Along will be uploaded over an encrypted connection to a server for preprocessing. The text is not saved and is not used for any other purpose. Using this site means that you agree for your data to be used in this way.",
+		"title": "Privacy Policy"
 	},
 	"upload": {
 		"audio": {
-			"title": "Audio",
-			"subtitle": "Select an audio file",
-			"success": " processed, but not uploaded. Your audio will stay on your computer.",
-			"record-toggle": "Record",
-			"file-toggle": "File",
-			"instructions": "Use pre-recorded audio from an mp3, wav, or webm file.",
 			"box-title": "Record your voice here",
 			"button": {
-				"rerecord": "Re-Record",
-				"record": "Record",
-				"stop": "Stop",
-				"play": "Play",
+				"delete": "Delete",
 				"download": "Download",
-				"delete": "Delete"
-			}
+				"play": "Play",
+				"record": "Record",
+				"rerecord": "Re-Record",
+				"stop": "Stop"
+			},
+			"file-toggle": "File",
+			"instructions": "Use pre-recorded audio from an mp3, wav, or webm file.",
+			"record-toggle": "Record",
+			"subtitle": "Select an audio file",
+			"success": " processed, but not uploaded. Your audio will stay on your computer.",
+			"title": "Audio"
 		},
 		"errors": {
 			"form-incomplete": "Please select or write text, select or record audio data, and select the language.",
@@ -55,9 +73,23 @@
 		"file": "File ",
 		"great": "Great!",
 		"header": {
-			"title": "Select data to start creating your ReadAlong",
-			"description": "In order to make a ReadAlong, we need 3 different things. We need to know <b>which language</b> your readalong is in, and we also need some <b>text</b>, and corresponding <b>audio</b>."
+			"description": "In order to make a ReadAlong, we need 3 different things. We need to know <b>which language</b> your readalong is in, and we also need some <b>text</b>, and corresponding <b>audio</b>.",
+			"title": "Select data to start creating your ReadAlong"
 		},
+		"lang": {
+			"dropdown-label": "Select Language",
+			"instructions": {
+				"blog-link": "this blog post series",
+				"contact-us": "contact us",
+				"part1": "If your language isn't supported in the list below, you can try and run it with the \"Undetermined\" option below. If that's not working very well, have a look at",
+				"part2": "to understand how you might get support for your language, or",
+				"part3": "for more info!"
+			},
+			"name-of-undetermined": "Undetermined - (und)",
+			"select-label": "You can use the dropdown below to select a pre-configured mapping for your language.",
+			"title": "Select your Language"
+		},
+		"next-button": "Go to the next step!",
 		"record": {
 			"success": "Audio was successfully recorded",
 			"success-title": "Yay!",
@@ -65,49 +97,15 @@
 			"try-again-title": "Audio not recorded!"
 		},
 		"text-box": {
-			"success": " processed. It will be uploaded through an encrypted connection when you go to the next step.",
-			"title": "Text",
-			"write-toggle": "Write",
-			"file-toggle": "File",
 			"file-instructions": "Select a plain text file (.txt) or a ReadAlong Studio temporary file (.ras)",
-			"write-instructions": "Write or paste your text here",
+			"file-toggle": "File",
 			"help-button": "Format",
 			"save-button": "Save",
-			"write-placeholder": "Ex. Hello my name is..."
-		},
-		"lang": {
-			"title": "Select your Language",
-			"instructions": {
-				"part1": "If your language isn't supported in the list below, you can try and run it with the \"Undetermined\" option below. If that's not working very well, have a look at",
-				"blog-link": "this blog post series",
-				"part2": "to understand how you might get support for your language, or",
-				"contact-us": "contact us",
-				"part3": "for more info!"
-			},
-			"select-label": "You can use the dropdown below to select a pre-configured mapping for your language.",
-			"dropdown-label": "Select Language",
-			"name-of-undetermined": "Undetermined - (und)"
-		},
-		"next-button": "Go to the next step!"
-	},
-	"privacy-policy": {
-		"title": "Privacy Policy",
-		"text": "We have built this tool with the top goal of respecting your privacy and data sovereignty. The audio that you use on this site <b>does not get uploaded anywhere</b>. It will stay on your computer. The text you use for this Read Along will be uploaded over an encrypted connection to a server for preprocessing. The text is not saved and is not used for any other purpose. Using this site means that you agree for your data to be used in this way.",
-		"agree-button": "I agree"
-	},
-	"format-help": {
-		"header": "Here is how to format your plain text input text.",
-		"part1-one-sent-per-line": "Each line should ideally contain one sentence, although that is not a strict rule.",
-		"part2-paragraph-breaks": "Paragraph breaks are indicated by inserting a blank line.",
-		"part3-page-breaks": "Page breaks are indicated by inserting two consecutive blank lines.",
-		"example-label": "Example:",
-		"pre-formatted-example": "This is sentence one in paragraph one on page one.\nThis is sentence two in paragraph one on page one.\n\nThis is sentence one in paragraph two on page one.\nThis is sentence two in paragraph two on page one.\n\n\nThis is sentence one in paragraph one on page two.",
-		"close-button": "Close"
-	},
-	"demo": {
-		"congrats": "Congratulations! Here's your ReadAlong!",
-		"download-button-alt": "Save your ReadAlong",
-		"title-slot": "Title",
-		"subtitle-slot": "Subtitle"
+			"success": " processed. It will be uploaded through an encrypted connection when you go to the next step.",
+			"title": "Text",
+			"write-instructions": "Write or paste your text here",
+			"write-placeholder": "Ex. Hello my name is...",
+			"write-toggle": "Write"
+		}
 	}
 }

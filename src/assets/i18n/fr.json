@@ -1,40 +1,58 @@
 {
 	"app": {
-		"welcome": "Bienvenue au Studio ReadAlong",
 		"description": {
-			"part1": "Cet outil vous aidera à créer une page interactive de lecture accompagnée, sur laquelle les mots sont surlignés lorsqu'ils sont lus à voix haute. Jetez un coup d'œil à",
 			"east-cree-link": "cet exemple en cri de l'Est",
+			"part1": "Cet outil vous aidera à créer une page interactive de lecture accompagnée, sur laquelle les mots sont surlignés lorsqu'ils sont lus à voix haute. Jetez un coup d'œil à",
 			"part2": "pour mieux comprendre le concept."
 		},
-		"getting-started-bad": "Avant de commencer à en faire vous-même, veuillez lire notre <a style='color: #07c; cursor: pointer;' (click)='openPrivacyDialog()'>politique de vie privée et de souveraineté des données</a>, faites une visite guidée en cliquant sur le bouton « Visite guidée » puis suivez les étapes ci-dessous.",
 		"getting-started": {
 			"part1": "Avant de commencer à en faire vous-même, veuillez lire notre",
-			"privacy-policy-link": "politique de vie privée et de souveraineté des données",
-			"part2": ", faites une visite guidée en cliquant sur le bouton « Visite guidée » puis suivez les étapes ci-dessous."
+			"part2": ", faites une visite guidée en cliquant sur le bouton « Visite guidée » puis suivez les étapes ci-dessous.",
+			"privacy-policy-link": "politique de vie privée et de souveraineté des données"
 		},
-		"tour-button": "Visite guidée",
+		"not-released": "Cette appli n'a pas été publiée officiellement. Prière de ne pas vous attendre à ce qu'elle fonctionne déjà correctement.",
+		"not-released-title": "Avertissement",
 		"step1": "Étape 1",
 		"step2": "Étape 2",
-		"not-released": "Cette appli n'a pas été publiée officiellement. Prière de ne pas vous attendre à ce qu'elle fonctionne déjà correctement.",
-		"not-released-title": "Avertissement"
+		"tour-button": "Visite guidée",
+		"welcome": "Bienvenue au Studio ReadAlong"
+	},
+	"demo": {
+		"congrats": "Félicitations! Voici votre ReadAlong!",
+		"subtitle-slot": "Sous-titre",
+		"title-slot": "Titre"
+	},
+	"format-help": {
+		"close-button": "Fermer",
+		"example-label": "Par exemple:",
+		"header": "Voici comment formatter le texte brut pour votre ReadAlong.",
+		"part1-one-sent-per-line": "Idéalement chaque ligne ne devrait contenir qu'une seule phrase, mais ceci n'est pas strictement exigé.",
+		"part2-paragraph-breaks": "Pour séparer des paragraphes, insérez une ligne vide.",
+		"part3-page-breaks": "Pour séparer les pages, insérez une séquence de deux lignes vides.",
+		"pre-formatted-example": "Phrase un dans le paragraphe un à la page un.\nPhrase deux dans le paragraphe un à la page un.\n\nPhrase un dans le paragraphe deux à la page un.\nPhrase deux dans le paragraphe deux à la page un.\n\n\nPhrase un dans le paragraphe un à la page deux."
+	},
+	"privacy-policy": {
+		"agree-button": "D'accord",
+		"text": "Cet outil a été conçu avec le but principal de respecter votre vie privée et la souveraineté de vos données. L'audio que vous rentrez sur ce site <b>ne sera jamais téléversé</b> mais restera sur votre ordinateur. Le texte que vous utilisez pour ce ReadAlong sera transféré à un serveur par une connection chiffrée pour accomplir le traitement nécessaire, mais ne sera ni sauvegardé ni utilisé à d'autres fins. Votre utilisation de ce site indique votre accord avec cette utilisation de vos données.",
+		"title": "Politique de vie privée"
 	},
 	"upload": {
 		"audio": {
-			"title": "Audio",
-			"subtitle": "Choisir un fichier audio",
-			"success": " lu, mais pas téléversé. Votre audio restera sur votre ordinateur.",
-			"record-toggle": "Enregistrer",
-			"file-toggle": "Fichier",
-			"instructions": "Votre fichier audio doit être en format mp3, wav ou webm.",
 			"box-title": "Enregistrez votre voix ici",
 			"button": {
-				"rerecord": "Réenregistrer",
-				"record": "Enregistrer",
-				"stop": "Arrêt",
-				"play": "Lecture",
+				"delete": "Effacer",
 				"download": "Télécharger",
-				"delete": "Effacer"
-			}
+				"play": "Lecture",
+				"record": "Enregistrer",
+				"rerecord": "Réenregistrer",
+				"stop": "Arrêt"
+			},
+			"file-toggle": "Fichier",
+			"instructions": "Votre fichier audio doit être en format mp3, wav ou webm.",
+			"record-toggle": "Enregistrer",
+			"subtitle": "Choisir un fichier audio",
+			"success": " lu, mais pas téléversé. Votre audio restera sur votre ordinateur.",
+			"title": "Audio"
 		},
 		"errors": {
 			"form-incomplete": "Prière de préparer votre texte et votre audio et de choisir une langue.",
@@ -55,9 +73,23 @@
 		"file": "Fichier ",
 		"great": "Bravo!",
 		"header": {
-			"title": "Sélectionner des données pour commencer votre ReadAlong",
-			"description": "Pour créer un ReadAlong, nous avons besoin de trois informations. D'abord, <b>en quelle langue</b> sera votre ReadAlong, ensuite <b>un texte</b> puis finalement <b>un enregistrement audio</b>."
+			"description": "Pour créer un ReadAlong, nous avons besoin de trois informations. D'abord, <b>en quelle langue</b> sera votre ReadAlong, ensuite <b>un texte</b> puis finalement <b>un enregistrement audio</b>.",
+			"title": "Sélectionner des données pour commencer votre ReadAlong"
 		},
+		"lang": {
+			"dropdown-label": "Selectionner une langue",
+			"instructions": {
+				"blog-link": "cette série de billets de blogue (en anglais)",
+				"contact-us": "contactez-nous",
+				"part1": "Si votre lange ne figure pas dans la liste ci-dessous, vous pouvez vous essayer avec l'option « Indeterminée ». Si cela ne fonctionne pas très bien, jetez un coup d'œil sur",
+				"part2": "pour comprendre comment ajouter votre langue à la liste, ou",
+				"part3": "pour plus d'informations!"
+			},
+			"name-of-undetermined": "Indeterminée - (und)",
+			"select-label": "Vous pouvez utiliser le menu ci-dessous pour sélectionner une correspondance orthographique-phonétique préconstruite pour votre langue.",
+			"title": "Selectionner votre langue"
+		},
+		"next-button": "Prochaine étape!",
 		"record": {
 			"success": "Audio enregistré avec succès",
 			"success-title": "Hourra!",
@@ -65,49 +97,15 @@
 			"try-again-title": "Erreur d'enregistrement"
 		},
 		"text-box": {
-			"success": " lu. Il sera téléversé à l'aide d'une connexion chiffrée quand vous passerez à la prochaine étape.",
-			"title": "Texte",
-			"write-toggle": "Rédiger",
-			"file-toggle": "Fichier",
 			"file-instructions": "Sélectionnez un fichier de texte brut (.txt) ou un fichier ReadAlong Studio (.ras)",
-			"write-instructions": "Rédigez ou collez votre texte ici",
+			"file-toggle": "Fichier",
 			"help-button": "Format",
 			"save-button": "Télécharger",
-			"write-placeholder": "Ex. Bonjour, je m'appelle..."
-		},
-		"lang": {
-			"title": "Selectionner votre langue",
-			"instructions": {
-				"part1": "Si votre lange ne figure pas dans la liste ci-dessous, vous pouvez vous essayer avec l'option « Indeterminée ». Si cela ne fonctionne pas très bien, jetez un coup d'œil sur",
-				"blog-link": "cette série de billets de blogue (en anglais)",
-				"part2": "pour comprendre comment ajouter votre langue à la liste, ou",
-				"contact-us": "contactez-nous",
-				"part3": "pour plus d'informations!"
-			},
-			"select-label": "Vous pouvez utiliser le menu ci-dessous pour sélectionner une correspondance orthographique-phonétique préconstruite pour votre langue.",
-			"dropdown-label": "Selectionner une langue",
-			"name-of-undetermined": "Indeterminée - (und)"
-		},
-		"next-button": "Prochaine étape!"
-	},
-	"privacy-policy": {
-		"title": "Politique de vie privée",
-		"text": "Cet outil a été conçu avec le but principal de respecter votre vie privée et la souveraineté de vos données. L'audio que vous rentrez sur ce site <b>ne sera jamais téléversé</b> mais restera sur votre ordinateur. Le texte que vous utilisez pour ce ReadAlong sera transféré à un serveur par une connection chiffrée pour accomplir le traitement nécessaire, mais ne sera ni sauvegardé ni utilisé à d'autres fins. Votre utilisation de ce site indique votre accord avec cette utilisation de vos données.",
-		"agree-button": "D'accord"
-	},
-	"format-help": {
-		"header": "Voici comment formatter le texte brut pour votre ReadAlong.",
-		"part1-one-sent-per-line": "Idéalement chaque ligne ne devrait contenir qu'une seule phrase, mais ceci n'est pas strictement exigé.",
-		"part2-paragraph-breaks": "Pour séparer des paragraphes, insérez une ligne vide.",
-		"part3-page-breaks": "Pour séparer les pages, insérez une séquence de deux lignes vides.",
-		"example-label": "Par exemple:",
-		"pre-formatted-example": "Phrase un dans le paragraphe un à la page un.\nPhrase deux dans le paragraphe un à la page un.\n\nPhrase un dans le paragraphe deux à la page un.\nPhrase deux dans le paragraphe deux à la page un.\n\n\nPhrase un dans le paragraphe un à la page deux.",
-		"close-button": "Fermer"
-	},
-	"demo": {
-		"congrats": "Félicitations! Voici votre ReadAlong!",
-		"download-button-alt": "Sauvegarder votre ReadAlong",
-		"title-slot": "Titre",
-		"subtitle-slot": "Sous-titre"
+			"success": " lu. Il sera téléversé à l'aide d'une connexion chiffrée quand vous passerez à la prochaine étape.",
+			"title": "Texte",
+			"write-instructions": "Rédigez ou collez votre texte ici",
+			"write-placeholder": "Ex. Bonjour, je m'appelle...",
+			"write-toggle": "Rédiger"
+		}
 	}
 }
