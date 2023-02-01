@@ -41,7 +41,7 @@ export class DemoComponent implements OnInit {
       <script src="${this.b64Inputs[3][0]}"></script>
     </head>
     <body>
-        <read-along text="${this.b64Inputs[1]}" alignment="${this.b64Inputs[2]}" audio="${this.b64Inputs[0]}" use-assets-folder="false">
+        <read-along readalong="${this.b64Inputs[1]}" audio="${this.b64Inputs[0]}" use-assets-folder="false">
         <span slot="read-along-header">${this.slots.title}</span>
         <span slot="read-along-subheader">${this.slots.subtitle}</span>
         </read-along>
