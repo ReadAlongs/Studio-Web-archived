@@ -46,7 +46,7 @@ export class UploadComponent implements OnInit {
   progressValue = 0;
 
   @Output() stepChange = new EventEmitter<any[]>();
-  public uploadFormGroup = this._formBuilder.group({
+  public uploadFormGroup: any = this._formBuilder.group({
     lang: this.langControl,
     text: this.textControl,
     audio: this.audioControl,
