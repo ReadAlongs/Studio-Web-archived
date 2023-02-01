@@ -63,23 +63,4 @@ export class B64Service {
     let xml_doc = parser.parseFromString(xml, "application/xml");
     return this.utf8_to_b64(new XMLSerializer().serializeToString(xml_doc));
   }
-  alignmentToSmil(alignment: Segment, text_path: string, audio_path: string) {
-    let topLine =
-      '<smil xmlns="http://www.w3.org/ns/SMIL" version="3.0"><body>';
-    let bottomLine = "</body></smil>";
-    let noiseWords = new Set(["<sil>", "(NULL)"]);
-    if (alignment.w === undefined) throw "Missing segmentation in alignment";
-    let middle = alignment.w
-      .filter((x: Segment) => !noiseWords.has(x.t))
-      .map(
-        (x: Segment) =>
-          `<par id="par-${x.t}">
-     <text src="${text_path}#${x.t}"/>
-    <audio src="${audio_path}" clipBegin="${x.b}" clipEnd="${x.b + x.d}"/>
-    </par>`
-      );
-    return `data:application/xml;base64,${this.xmlStringToB64(
-      topLine + middle + bottomLine
-    )}`;
-  }
 }

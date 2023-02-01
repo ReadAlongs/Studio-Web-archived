@@ -11,6 +11,7 @@ import { MatStepper } from "@angular/material/stepper";
 
 import { B64Service } from "./b64.service";
 import { FileService } from "./file.service";
+import { addAlignmentsToXML } from "./soundswallower.service";
 import {
   audio_file_step,
   audio_record_step,
@@ -111,16 +112,11 @@ export class AppComponent {
 
   stepChange(event: any[]) {
     if (event[0] === "aligned") {
+      const aligned_xml = addAlignmentsToXML(event[2], event[3] as Segment);
+      const b64_xml = this.b64Service.xmlStringToB64(aligned_xml);
       forkJoin([
         this.fileService.readFileAsData$(event[1]),
-        of(
-          `data:application/xml;base64,${this.b64Service.xmlStringToB64(
-            event[2]
-          )}`
-        ),
-        of(
-          this.b64Service.alignmentToSmil(event[3] as Segment, "test", "test")
-        ),
+        of(`data:application/xml;base64,${b64_xml}`),
         this.b64Service.getBundle$(),
       ]).subscribe((x: any) => this.b64Inputs$.next(x));
       this.stepper.next();

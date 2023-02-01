@@ -66,8 +66,8 @@
 
                 <div *ngIf="inputMethod.audio === 'upload'" class="row mb-3">
                     <h2 i18n="Title for upload box" class="subtitle">Select an audio file</h2>
-                    <label i18n="Instructions for uploading audio" for="updateAudio" class="form-label">Use pre-recorded audio from an mp3, wav, or webm file.</label>
-                    <input (change)="onFileSelected('audio', $event)" class="form-control" name="audio" type="file" id="updateAudio" accept=".mp3,.wav,.webm">
+                    <label i18n="Instructions for uploading audio" for="updateAudio" class="form-label">Use pre-recorded audio from an mp3, m4a, wav, or webm file.</label>
+                    <input (change)="onFileSelected('audio', $event)" class="form-control" name="audio" type="file" id="updateAudio" accept=".mp3,.m4a,.wav,.webm">
                 </div>
                 <div *ngIf="inputMethod.audio === 'mic'" class="mb-0 mb-md-3">
                     <div class="row">
