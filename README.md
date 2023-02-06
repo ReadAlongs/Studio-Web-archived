@@ -1,3 +1,11 @@
+# MOVED
+
+This repo has been moved to a sub-package of https://github.com/ReadAlongs/Web-Component.
+
+Please do not submit contributions here anymore!
+
+Please do not use this version anymore!
+
 # ReadAlong-Studio Web
 
 :construction: :construction: This project is moving to a monorepo, please don't do development on this repo. Instead, please go to https://github.com/ReadAlongs/Web-Component :construction: :construction:
